@@ -19,4 +19,4 @@ jobs:
     - name: Build
       run: javac src/main/java/Sender/SendData.java
     - name: Verify
-      run: java -ea -classpath . src.main.java.Sender.SendData
+      run: java -ea -classpath . Sender.SendData
