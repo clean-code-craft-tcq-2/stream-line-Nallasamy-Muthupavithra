@@ -17,6 +17,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build
-      run: javac src/main/java/Sender/SendData.java
+      run: javac Sender/SendData.java
     - name: Verify
       run: java -ea -classpath . Sender.SendData
