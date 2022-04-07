@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SendData {
+public class Sender {
 
   private static final DecimalFormat decimalFormat = new DecimalFormat("0.0000");
   private static final float MAX_TEMP = 45;
