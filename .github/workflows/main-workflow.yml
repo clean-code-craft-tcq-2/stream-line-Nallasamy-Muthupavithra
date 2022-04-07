@@ -1,9 +1,15 @@
-# This workflow will build a Java project 
+# This workflow will build a Java project with Maven
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Build and Run
+name: Build Run and Test
 
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+    - '**.md'
+  pull_request:
+    paths-ignore:
+    - '**.md'
 
 jobs:
   build:
@@ -16,7 +22,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build
-      run: javac Sender/SendData.java
-    - name: Verify
-      run: java -ea -classpath . Sender.SendData
+    - name: Build and Generate coverage
+      run: mvn test jacoco:report
+    - name: Upload coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: ./target/site/jacoco
+        retention-days: 21
