@@ -6,13 +6,14 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import Sender.Sender;
 import org.junit.Test;
 
-public class SendDataTest {
+public class SenderTest {
 
   @Test
   public void testSimulateSingleData() {
-    Float data = SendData.simulateSingleData(1, 5);
+    Float data = Sender.simulateSingleData(1, 5);
     testRange(data, 1, 5);
   }
 
@@ -23,7 +24,7 @@ public class SendDataTest {
 
   @Test
   public void testPreprocessData() {
-    Float data = SendData.preprocessData((float) 5.6789004);
+    Float data = Sender.preprocessData((float) 5.6789004);
     assertTrue(Float.compare((float) 5.6789, data) == 0);
   }
 
@@ -33,18 +34,18 @@ public class SendDataTest {
     List<Float> tempSensorData = new ArrayList<>();
     curSensorData.add((float) -14.2346);
     tempSensorData.add((float) 34.6788);
-    String data = SendData.constructDataInCsv(curSensorData, tempSensorData, 0);
+    String data = Sender.constructDataInCsv(curSensorData, tempSensorData, 0);
     System.out.println(data);
     assertTrue(data.equals("-14.2346 , 34.6788"));
   }
 
   @Test
   public void testSendData() {
-    List<Float> curSensorData = SendData.simulateCurrentData();
+    List<Float> curSensorData = Sender.simulateCurrentData();
     assertEquals(50, curSensorData.size());
-    List<Float> tempSensorData = SendData.simulateTempData();
+    List<Float> tempSensorData = Sender.simulateTempData();
     assertEquals(50, tempSensorData.size());
-    int error = SendData.printSensorDataToConsole(curSensorData, tempSensorData);
+    int error = Sender.printSensorDataToConsole(curSensorData, tempSensorData);
     assertEquals(error, 0);
   }
 }
