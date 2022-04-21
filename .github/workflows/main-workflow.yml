@@ -24,7 +24,7 @@ jobs:
         java-version: 1.8
         
     - name: build Sender
-      run: javac -d ./out/ .src/main/java/Sender/Sender.java
+      run: javac -d ../out .src/main/java/Sender/Sender.java
 
 
     - name: build_Receiver
