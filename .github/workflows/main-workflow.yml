@@ -24,7 +24,7 @@ jobs:
         java-version: 1.8
         
     - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./src src/*.c* -o parameterValueSender
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./src src/*.java* -o parameterValueSender
     - name: build_Receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./dest dest/*.c* -o parameterValueReceiver
     - name: pipe_sender_receiver_executables
