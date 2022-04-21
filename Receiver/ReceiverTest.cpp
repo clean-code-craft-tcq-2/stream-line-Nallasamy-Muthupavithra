@@ -9,7 +9,7 @@ TEST_CASE("Tests to check if data is correctly read from file")
   float ChargeRate[NO_OF_READINGS] = {0};
   BMSReceiver(Temperature,SOC,ChargeRate);
   
-  float expectedoutput[3][3] = {{49,66,0.34}, {28,67,0.8},{88,90,0.52}};
+  float expectedoutput[3][3] = {{00,00,00}, {00,00,00},{00,00,00}};
   for(int i=0;i<3;i++)
   {
     REQUIRE(Temperature[i] == expectedoutput[i][0]);
