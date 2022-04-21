@@ -24,13 +24,13 @@ jobs:
         java-version: 1.8
         
     - name: build sender
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender SenderTest.java ./Sender.java 
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testsender src/SenderTest.java src/./Sender.java 
       
     - name: run sender
       run: ./testsender
       
     - name: build receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver ReceiverTest.cpp ./Receiver.c
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver dest/ReceiverTest.cpp dest/./Receiver.c
       
     - name: Pipeline sender/receiver
       run: ./testsender | ./testreceiver 
