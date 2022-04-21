@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-NO_OF_READINGS = 50;
+#define NO_OF_READINGS 50
 void GetSensorDataFromConsole(float* Temperature, float* SOC, float* ChargeRate);
 float GetParameterMaxReadingValue(float *BMSParameter);
 float GetParameterMinReadingValue(float *BMSParameter);
