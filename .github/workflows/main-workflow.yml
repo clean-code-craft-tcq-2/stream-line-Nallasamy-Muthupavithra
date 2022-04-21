@@ -22,13 +22,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-        
-    - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./src src/*.java* -o parameterValueSender
-    - name: build_Receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./dest dest/*.c* -o parameterValueReceiver
-    - name: pipe_sender_receiver_executables
-      run: ./parameterValueSender | ./parameterValueReceiver
       
     - name: Build and Generate coverage
       run: mvn test jacoco:report
