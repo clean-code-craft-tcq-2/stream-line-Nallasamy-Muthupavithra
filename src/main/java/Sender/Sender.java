@@ -42,7 +42,7 @@ public class Sender {
 
   public static String constructDataInCsv(final List<Float> curSensorData, final List<Float> tempSensorData,
       final int i) {
-    return curSensorData.get(i) + tempSensorData.get(i);
+    return curSensorData.get(i) + "," + tempSensorData.get(i);
   }
 
   public static List<Float> simulateCurrentData() {
