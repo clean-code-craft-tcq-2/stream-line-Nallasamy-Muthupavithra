@@ -24,13 +24,10 @@ jobs:
         java-version: 1.8        
 
     - name: pipe_sender_receiver_executables
-      run: mvn compile exec:java -Dexec.mainClass="Sender.Sender"
+      run: mvn compile exec:java -Dexec.mainClass="Sender.Sender" 
   
     - name: build_Receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./Receiver Receiver/*.c* -o parameterValueReceiver
-
-    - name: run receiver
-      run: ./parameterValueReceiver 
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./Receiver Receiver/*.c* -o parameterValueReceiver      
       
     - name: Build and Generate coverage
       run: mvn test jacoco:report
