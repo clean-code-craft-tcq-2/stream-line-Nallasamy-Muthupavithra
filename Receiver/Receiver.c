@@ -8,18 +8,14 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
    for(int i=0; fscanf(fp, "%50s", ReadString)!=EOF; i++)
    {
  
-        CommaSeparatedData(ReadString,i);
-   }
-}
-void CommaSeparatedData(char str[], int index)
-{
    char *pt;
    pt = strtok (str, ",");
-   float* Current[index] = atof (pt);
-   printf ("\nCurrent[%d]: %d", index,Current[index]);
+   Current[index] = atof(pt);
+   //printf ("\nCurrent[%d]: %d", index,Current[index]);
    pt = strtok (NULL, ",");
-   float* Temperature[index]= atof(pt);
-   printf("\nCurrent[%d]: %f", index,Current[index]);
+   Temperature[index]= atof(pt);
+   //printf("\nCurrent[%d]: %f", index,Current[index]);
+   }
 }
 
 float GetMaxReadingValue(float *BMSParameter)
