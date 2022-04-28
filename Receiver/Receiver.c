@@ -6,7 +6,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
   
   for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
   {
-    scanf("%.3f,%.3f",&Current[readingIndex],&Temperature[readingIndex]);
+    scanf("%.4f,%.4f",&Current[readingIndex],&Temperature[readingIndex]);
   }
   
 }
