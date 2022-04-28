@@ -9,7 +9,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
    {
  
    char *pt;
-   pt = strtok (str, ",");
+   pt = strtok (ReadString, ",");
    Current[index] = atof(pt);
    //printf ("\nCurrent[%d]: %d", index,Current[index]);
    pt = strtok (NULL, ",");
