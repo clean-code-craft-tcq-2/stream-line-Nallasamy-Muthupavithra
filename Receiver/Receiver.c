@@ -1,17 +1,17 @@
 #include "Receiver.h"
 
-void GetSensorDataFromConsole(float* Temperature, float* SOC, float* ChargeRate)
+void GetSensorDataFromConsole(float* Current, float* Temperature)
 {
   int readingIndex = 0;
   
   for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
   {
-    scanf("%f ,%f ,%f",&Temperature[readingIndex],&SOC[readingIndex],&ChargeRate[readingIndex]);
+    scanf("%f ,%f",&Current[readingIndex],&Temperature[readingIndex]);
   }
   
 }
 
-float GetParameterMaxReadingValue(float *BMSParameter)
+float GetMaxReadingValue(float *BMSParameter)
 {
   int readingIndex;
   float MaxReadingValue = BMSParameter[0];
@@ -27,7 +27,7 @@ float GetParameterMaxReadingValue(float *BMSParameter)
   return MaxReadingValue;
 }
 
-float GetParameterMinReadingValue(float *BMSParameter)
+float GetMinReadingValue(float *BMSParameter)
 {
   int readingIndex;
   float MinReadingValue = BMSParameter[0];
@@ -43,7 +43,7 @@ float GetParameterMinReadingValue(float *BMSParameter)
   return MinReadingValue;
 }
 
-float GetParameterSMAValue(float *BMSParameter)
+float GetSMAValue(float *BMSParameter)
 {
   float SMAValue = 0.0;
   float Sum = 0.0;
@@ -72,10 +72,9 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   
 }
 
-void BMSReceiver(float* Temperature, float* SOC, float* ChargeRate)
+void BMSReceiver(float* Current, float* Temperature)
 {
-  GetSensorDataFromConsole(Temperature,SOC,ChargeRate);
-  PrintReceivedDataOnConsole(Temperature,GetParameterMaxReadingValue(Temperature),GetParameterMinReadingValue(Temperature),GetParameterSMAValue(Temperature));
-  PrintReceivedDataOnConsole(SOC,GetParameterMaxReadingValue(SOC),GetParameterMinReadingValue(SOC),GetParameterSMAValue(SOC));
-  PrintReceivedDataOnConsole(ChargeRate,GetParameterMaxReadingValue(ChargeRate),GetParameterMinReadingValue(ChargeRate),GetParameterSMAValue(ChargeRate));
+  GetSensorDataFromConsole(Current, Temperature);
+  PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
+  PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature));  
 }
