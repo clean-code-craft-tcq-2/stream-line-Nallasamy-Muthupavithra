@@ -26,10 +26,10 @@ jobs:
     - name: Build Sender
       run : mvn compile exec:java -Dexec.mainClass="Sender.Sender"
       
-    - name: build_Receiver
+    - name: Build_Receiver
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./Receiver Receiver/*.c* -o parameterValueReceiver      
       
-    - name: pipe_sender_receiver_executables
+    - name: Pipeline_Sender_Receiver_Executables
       run: mvn compile exec:java -Dexec.mainClass="Sender.Sender" | ./parameterValueReceiver   
       
     - name: Build and Generate coverage
