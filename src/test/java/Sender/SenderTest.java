@@ -36,7 +36,7 @@ public class SenderTest {
     tempSensorData.add((float) 34.6788);
     String data = Sender.constructDataInCsv(curSensorData, tempSensorData, 0);
     System.out.println(data);
-    assertTrue(data.equals("-14.2346 , 34.6788"));
+    assertTrue(data.equals("-14.2346,34.6788"));
   }
 
   @Test
