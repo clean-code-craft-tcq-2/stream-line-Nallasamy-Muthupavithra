@@ -14,7 +14,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
    printf ("\nCurrent[%d]: %.4f", i,Current[i]);
    pt = strtok (NULL, ",");
    Temperature[i]= atof(pt);
-   printf("\Temperature[%d]: %.4f", i,Temperature[i]);
+   printf("\nTemperature[%d]: %.4f", i,Temperature[i]);
    }
 }
 
