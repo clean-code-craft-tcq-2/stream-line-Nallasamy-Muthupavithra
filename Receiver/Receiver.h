@@ -5,7 +5,7 @@
 
 #define NO_OF_READINGS 50
 void GetSensorDataFromConsole(float* Current, float* Temperature);
-void CommaSeparatedData(char str[], int index,Current,Temperature);
+void CommaSeparatedData(char str[], int index);
 float GetMaxReadingValue(float *BMSParameter);
 float GetMinReadingValue(float *BMSParameter);
 float GetSMAValue(float *BMSParameter);
