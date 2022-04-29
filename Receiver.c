@@ -13,9 +13,9 @@ void GetSensorDataFromConsole()
    //printf( "%s\n", tokencheck);
    Current[i] = atof(tokencheck);
    printf ("Current[%d]: %.4f\n",i,Current[i]);
-   char *tokencheck1 = strtok (NULL, ",");
+   tokencheck  = strtok (NULL, ",");
    //printf( "%s\n", tokencheck );
-   Temperature[i]= atof(tokencheck1);
+   Temperature[i]= atof(tokencheck);
    printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
    }
 }
