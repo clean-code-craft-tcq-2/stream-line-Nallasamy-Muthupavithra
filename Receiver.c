@@ -79,11 +79,12 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   
 }
 
-void main()
+int main()
 {
   float Current[50] = {0};
   float Temperature[50] = {0};
   GetSensorDataFromConsole(Current, Temperature);
   PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
-  PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature));  
+  PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
+  return 0;
 }
