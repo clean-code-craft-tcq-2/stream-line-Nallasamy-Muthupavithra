@@ -7,7 +7,7 @@ void GetSensorDataFromConsole()
    char ReadString[1000] = {10,20,30,40};
    for(int i=0;i<NO_OF_READINGS ; i++)
    //{
-   char *token ={};
+   char *token ={'\0'};
    //scanf("%s", ReadString);
    token = strtok (ReadString, ",");
    printf( "%s\n", token);
