@@ -4,7 +4,7 @@
   float Temperature[50] = {};
 void GetSensorDataFromConsole()
 {
-   char ReadString[1000];
+   char ReadString[1000] = {};
    for(int i=0;i<NO_OF_READINGS ; i++)
    {
    char *token;
