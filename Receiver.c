@@ -1,7 +1,7 @@
 #include "Receiver.h"
 
-  float Current[50] = {};
-  float Temperature[50] = {};
+  //float Current[50] = {};
+ // float Temperature[50] = {};
 void GetSensorDataFromConsole()
 {
    char ReadString[1000] = {10,20,30,40};
@@ -11,11 +11,11 @@ void GetSensorDataFromConsole()
    //scanf("%s", ReadString);
    token = strtok (ReadString, ",");
    printf( "%s\n", token );
-   Current[i] = atof(token);
+   //Current[i] = atof(token);
    //printf ("Current[%d]: %.4f\n",i,Current[i]);
    token = strtok (NULL, ",");
    printf( "%s\n", token );
-   Temperature[i]= atof(token);
+   //Temperature[i]= atof(token);
    //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
    }
 }
