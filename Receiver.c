@@ -7,7 +7,7 @@ void GetSensorDataFromConsole()
    char ReadString[400];
    for(int i=0;i<NO_OF_READINGS ; i++)
    {
-   Const char *tokencheck;
+   const char *tokencheck;
    scanf("%s", ReadString);
    tokencheck = strtok (ReadString, ",");
    //printf( "%s\n", tokencheck);
