@@ -2,9 +2,9 @@
 
   float Current[50] = {};
   float Temperature[50] = {};
-void GetSensorDataFromConsole(float *Current, float *Temperature)
+void GetSensorDataFromConsole()
 {
-   char ReadString[400];
+   char ReadString[1000];
    for(int i=0;i<NO_OF_READINGS ; i++)
    {
    char *token;
@@ -83,7 +83,7 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
 
 int main()
 {
-  GetSensorDataFromConsole(Current, Temperature);
+  GetSensorDataFromConsole();
   PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
   PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
   return 0;
