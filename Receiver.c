@@ -7,9 +7,9 @@ void GetSensorDataFromConsole()
    char ReadString[400];
    for(int i=0;i<NO_OF_READINGS ; i++)
    {
-   //char *tokencheck;
+   Const char *tokencheck;
    scanf("%s", ReadString);
-   char *tokencheck = strtok (ReadString, ",");
+   tokencheck = strtok (ReadString, ",");
    //printf( "%s\n", tokencheck);
    Current[i] = atof(tokencheck);
    printf ("Current[%d]: %.4f\n",i,Current[i]);
@@ -20,7 +20,7 @@ void GetSensorDataFromConsole()
    }
 }
 
-float GetMaxReadingValue(float *BMSParameter)
+/*float GetMaxReadingValue(float *BMSParameter)
 {
   int readingIndex;
   float MaxReadingValue = BMSParameter[0];
@@ -79,12 +79,12 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   }
   printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);
   
-}
+}*/
 
 int main()
 {
   GetSensorDataFromConsole();
-  PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
+  //PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
   //PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
   return 0;
 }
