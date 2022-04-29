@@ -5,7 +5,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
   FILE* fp = fopen("./BMS_DataParameter.txt","r");
   float Curr_readings, Temp_readings;
   
-  for(int i=0; fscanf(fp, "%.4f,%.4f \n", &Curr_readings,&Temp_readings)!=EOF; i++)
+  for(int i=0; fscanf(fp,"%.4f \t %.4f \n", &Curr_readings,&Temp_readings)!=EOF; i++)
     {
       *(Current+i) = Curr_readings;
       *(Temperature+i) = Temp_readings;
