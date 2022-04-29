@@ -6,7 +6,7 @@ TEST_CASE("Tests to check if data is correctly read from file")
 {
   float Current[NO_OF_READINGS] = {0};
   float Temperature[NO_OF_READINGS] = {0};
-  BMSReceiver(Current, Temperature);
+  GetSensorDataFromConsole(Current, Temperature);
   
   float expectedoutput[2][2] = {{00,00}, {00,00}};
   for(int i=0;i<2;i++)
