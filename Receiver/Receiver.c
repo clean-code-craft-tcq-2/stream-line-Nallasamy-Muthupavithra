@@ -2,15 +2,12 @@
 
 void GetSensorDataFromConsole(float* Current, float* Temperature)
 {
-  FILE* fp = fopen("./BMS_DataParameter.txt","r");
-  float Curr_readings, Temp_readings;
+  int readingIndex = 0;
   
-  for(int i=0; fscanf(fp,"%f \t %f \n", &Curr_readings,&Temp_readings)!=EOF; i++)
-    {
-      *(Current+i) = Curr_readings;
-      *(Temperature+i) = Temp_readings;
-    }
-  fclose(fp);
+  for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
+  {
+    scanf("%f\t%f",&Current[readingIndex],&Temperature[readingIndex]);
+  }
 }
 
 float GetMaxReadingValue(float *BMSParameter)
