@@ -7,8 +7,8 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
   
   for(int i=0; fscanf(fp, "%.4f,%.4f \n", &Curr_readings,&Temp_readings)!=EOF; i++)
     {
-      Current[i] = Curr_readings;
-      Temperature[i] = Temp_readings;
+      *(Current+i) = Curr_readings;
+      *(Temperature+i) = Temp_readings;
     }
   fclose(fp);
 }
