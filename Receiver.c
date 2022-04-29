@@ -1,7 +1,7 @@
 #include "Receiver.h"
 
  float Current[50] = {};
- // float Temperature[50] = {};
+ float Temperature[50] = {};
 void GetSensorDataFromConsole()
 {
    char ReadString[400];
