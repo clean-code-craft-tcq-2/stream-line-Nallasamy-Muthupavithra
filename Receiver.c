@@ -5,10 +5,10 @@
 void GetSensorDataFromConsole()
 {
    char ReadString[1000] = {10,20,30,40};
-   //for(int i=0;i<NO_OF_READINGS ; i++)
-   //{
+   for(int i=0;i<NO_OF_READINGS ; i++)
+   {
    //char *tokencheck;
-   //scanf("%s", ReadString);
+   scanf("%s", ReadString);
    char *tokencheck = strtok (ReadString, ",");
    printf( "%s\n", tokencheck);
    //Current[i] = atof(token);
@@ -17,7 +17,7 @@ void GetSensorDataFromConsole()
    //printf( "%s\n", tokencheck );
    //Temperature[i]= atof(token);
    //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
-   //}
+   }
 }
 
 /*float GetMaxReadingValue(float *BMSParameter)
