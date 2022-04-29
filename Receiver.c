@@ -8,14 +8,15 @@ void GetSensorDataFromConsole()
    for(int i=0;i<NO_OF_READINGS ; i++)
    {
    const char *tokencheck;
+    const char *tokencheck1;
    scanf("%s", ReadString);
    tokencheck = strtok (ReadString, ",");
    //printf( "%s\n", tokencheck);
    Current[i] = atof(tokencheck);
    printf ("Current[%d]: %.4f\n",i,Current[i]);
-   tokencheck  = strtok (NULL, ",");
+   tokencheck1  = strtok (NULL, ",");
    //printf( "%s\n", tokencheck );
-   Temperature[i]= atof(tokencheck);
+   Temperature[i]= atof(tokencheck1);
    printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
    }
 }
