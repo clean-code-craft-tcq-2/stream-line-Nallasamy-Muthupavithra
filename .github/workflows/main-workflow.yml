@@ -26,8 +26,11 @@ jobs:
     - name: Build Sender
       run : mvn compile exec:java -Dexec.mainClass="Sender.Sender"
       
-    - name: Build_Receiver
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -I ./Receiver Receiver/*.c* -o parameterValueReceiver       
+    - name: Build Reciever
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker *.c*
+      
+    - name: Run Reciever
+      run: ./testchecker       
       
     - name: Build and Generate coverage
       run: mvn test jacoco:report
