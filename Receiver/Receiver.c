@@ -1,6 +1,6 @@
 #include "Receiver.h"
 
-void GetSensorDataFromConsole(float* Current, float* Temperature)
+void GetSensorDataFromConsole(float Current, float Temperature)
 {
    char ReadString[400];
    for(int i=0;i<NO_OF_READINGS ; i++)
