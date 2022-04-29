@@ -10,11 +10,11 @@ void GetSensorDataFromConsole(float *Current, float *Temperature)
    token = strtok (ReadString, ",");
    //printf( "%s\n", token );
    Current[i] = atof(token);
-   //printf ("Current[%d] %4f\n",i,Current[i]);
+   printf ("Current[%d]: %.4f\n",i,Current[i]);
    token = strtok (NULL, ",");
    //printf( "%s\n", token );
    Temperature[i]= atof(token);
-   //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
+   printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
    }
 }
 
