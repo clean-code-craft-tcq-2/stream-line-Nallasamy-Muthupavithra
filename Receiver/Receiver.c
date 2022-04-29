@@ -1,6 +1,6 @@
 #include "Receiver.h"
 
-void GetSensorDataFromConsole(float *Current, float *Temperature)
+void GetSensorDataFromConsole(float Current, float Temperature)
 {
    char ReadString[400];
    for(int i=0;i<NO_OF_READINGS ; i++)
@@ -79,7 +79,7 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   
 }
 
-void BMSReceiver(float *Current, float *Temperature)
+void BMSReceiver(float Current, float Temperature)
 {
   GetSensorDataFromConsole(Current, Temperature);
   PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
