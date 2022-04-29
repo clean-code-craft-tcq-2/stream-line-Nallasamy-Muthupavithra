@@ -2,12 +2,19 @@
 
 void GetSensorDataFromConsole(float* Current, float* Temperature)
 {
-  int readingIndex = 0;
-  
-  for(readingIndex = 0; readingIndex < NO_OF_READINGS; readingIndex++)
-  {
-    scanf("%f\t%f",&Current[readingIndex],&Temperature[readingIndex]);
-  }
+   char ReadString[400];
+   for(int i=0;i<2 ; i++)
+   {
+   char *token;
+   scanf("%s", ReadString);
+   token = strtok (ReadString, ",");
+   //printf( "%s\n", token );
+   Current[i] = atof(token);
+   //printf ("Current[%d] %4f\n",i,Current[i]);
+   token = strtok (NULL, ",");
+   //printf( "%s\n", token );
+   Temperature[i]= atof(token);
+   //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
 }
 
 float GetMaxReadingValue(float *BMSParameter)
