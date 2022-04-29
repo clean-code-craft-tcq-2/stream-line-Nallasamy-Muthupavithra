@@ -15,6 +15,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
    //printf( "%s\n", token );
    Temperature[i]= atof(token);
    //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
+   }
 }
 
 float GetMaxReadingValue(float *BMSParameter)
