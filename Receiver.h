@@ -4,6 +4,13 @@
 #include <string.h>
 
 #define NO_OF_READINGS 50
+
+typdef struct
+{
+  Current;
+  Temperature;
+}BatteryChargingParameters;
+
 void GetSensorDataFromConsole(float *Current, float *Temperature);
 float GetMaxReadingValue(float *BMSParameter);
 float GetMinReadingValue(float *BMSParameter);
