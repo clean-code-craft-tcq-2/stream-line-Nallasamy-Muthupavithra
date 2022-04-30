@@ -2,16 +2,40 @@
 #include "Receiver.h"
 #include "catch.hpp"
 
-TEST_CASE("Tests to check if data is correctly read from console")
-{
-  float Current[NO_OF_READINGS] = {0};
-  float Temperature[NO_OF_READINGS] = {0};
-  BMSReceiver(Current, Temperature);
-  
-  float expectedoutput[2][2] = {{-9.9594,24.5782}, {-12.7969,7.8247}};
-  for(int i=0;i<2;i++)
-  {
-    REQUIRE(Current[i] == expectedoutput[i][0]);
-    REQUIRE(Temperature[i] == expectedoutput[i][1]);
-  }
+TEST_CASE("Test to check Receiver statistics") 
+{ 
+   BatteryChargingParameters ExpectedData[NO_OF_READINGS], Max, Min, SMA;
+   BMSReceiver(Current, Temperature);
+   float Current_loc, Temperature_loc;
+    
+   FILE * file= fopen("./BMS_DataFromConsole.txt","r");                                                                  
+   for(int i = 0 ; i < NO_OF_READINGS; i++)
+   {
+     if (file!=NULL) 
+     {
+        for(int i=0;fscanf(file, "%f,%f\n", &Current_loc,&Temperature_loc)!=EOF ;i++)
+        {
+            ExpectedData[i].Current = Current_loc;
+            ExpectedData[i].Temperature = Temperature_loc;
+        }
+     }
+       
+     REQUIRE( (Current[i] - ExpectedData[i].Current) <= 0.001);
+     REQUIRE( (Temperature[i] - ExpectedData[i].Temperature) <= 0.001);
+   }
+   fclose(file);
+ 
+    Min.Current=  GetMaxReadingValue(Current);
+    Max.Current = GetMinReadingValue(Current);
+    SMA.Current = GetSMAValue(Current);
+	  Min.Temperature=  GetMaxReadingValue(Temperature);
+    Max.Temperature = GetMinReadingValue(Temperature);
+    SMA.Temperature = GetSMAValue(Temperature);
+   
+    REQUIRE( abs(Min.Current - (-13.774300) ) <=0.001);
+    REQUIRE( abs(Max.Current - 14.962000 ) <=0.001);
+    REQUIRE( abs(SMA.Current - 1.511800 ) <=0.001);
+    REQUIRE( abs(Min.Temperature - 0.216200 ) <=0.001);
+    REQUIRE( abs(Max.Temperature - 43.833599 ) <=0.001);
+    REQUIRE( abs(SMA.Temperature - 23.042278 ) <=0.001);
 }
