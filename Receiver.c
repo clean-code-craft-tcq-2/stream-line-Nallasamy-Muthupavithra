@@ -5,7 +5,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
   FILE* fp = fopen("./BMS_DataFromConsole.txt","r");
   float Curr_readings, Temp_readings;
   
-  for(int i=0; fscanf(fp, "%f,%f \n", &Curr_readings,&Temp_reading)!=EOF; i++)
+  for(int i=0; fscanf(fp, "%f,%f \n", &Curr_readings,&Temp_readings)!=EOF; i++)
     {
       *(Current + i) = Curr_readings;
       *(Temperature + i) = Temp_readings;
@@ -77,5 +77,4 @@ void BMSReceiver(float *Current, float *Temperature)
   GetSensorDataFromConsole(Current,Temperature);
   PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
   PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
-  return 0;
 }
