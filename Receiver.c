@@ -72,7 +72,7 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);  
 }
 
-int BMSReceiver(float *Current, float *Temperature)
+void BMSReceiver(float *Current, float *Temperature)
 {
   GetSensorDataFromConsole(Current,Temperature);
   PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
