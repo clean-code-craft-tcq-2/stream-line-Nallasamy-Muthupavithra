@@ -25,7 +25,7 @@ TEST_CASE("Test to check Receiver statistics")
      }
        
      REQUIRE( (Current[i] - ExpectedCurrent[i]) <= 0.001);
-     REQUIRE( (Current[i] - ExpectedTemperature[i]) <= 0.001);
+     REQUIRE( (Temperature[i] - ExpectedTemperature[i]) <= 0.001);
    }
    fclose(file);
  
