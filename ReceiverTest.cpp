@@ -36,7 +36,7 @@ TEST_CASE("Test to check Receiver statistics")
     float MaxTemperature = GetMinReadingValue(Temperature);
     float SMATemperature = GetSMAValue(Temperature);
    
-    REQUIRE( abs(MinCurrent - (-13.774300) ) <=0.001);
+    REQUIRE( abs(MinCurrent - 13.774300 ) <=0.001);
     REQUIRE( abs(MaxCurrent - 14.962000 ) <=0.001);
     REQUIRE( abs(SMACurrent - 1.511800 ) <=0.001);
     REQUIRE( abs(MinTemperature - 0.216200 ) <=0.001);
