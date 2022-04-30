@@ -1,24 +1,24 @@
 #include "Receiver.h"
 
- float Current[50] = {};
- float Temperature[50] = {};
+ float curSensorData[50];
+ //float Temperature[50] = {};
 void GetSensorDataFromConsole()
 {
    char ReadString[400];
-   for(int i=0;i<NO_OF_READINGS ; i++)
-   {
-   const char *tokencheck;
-    const char *tokencheck1;
-   scanf("%s", ReadString);
-   tokencheck = strtok (ReadString, ",");
+   //for(int i=0;i<NO_OF_READINGS ; i++)
+   //{
+   // char *tokencheck;
+    //const char *tokencheck1;
+   //scanf("%s", ReadString);
+   //tokencheck = strtok (ReadString, ",");
    //printf( "%s\n", tokencheck);
-   Current[i] = atof(tokencheck);
-   printf ("Current[%d]: %.4f\n",i,Current[i]);
-   tokencheck1  = strtok (NULL, ",");
+  // Current[i] = atof(tokencheck);
+   printf ("Current[%d]: %.4f\n",i,curSensorData[i]);
+  // tokencheck1  = strtok (NULL, ",");
    //printf( "%s\n", tokencheck );
-   Temperature[i]= atof(tokencheck1);
-   printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
-   }
+   //Temperature[i]= atof(tokencheck1);
+   //printf("Temperature[%d]: %.4f\n", i,Temperature[i]);
+  // }
 }
 
 /*float GetMaxReadingValue(float *BMSParameter)
