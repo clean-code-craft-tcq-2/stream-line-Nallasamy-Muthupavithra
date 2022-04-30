@@ -5,7 +5,7 @@
 
 #define NO_OF_READINGS 50
 
-typdef struct
+typedef struct
 {
   float Current;
   float Temperature;
