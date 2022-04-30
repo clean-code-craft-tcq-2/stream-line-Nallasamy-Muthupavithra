@@ -28,9 +28,6 @@ jobs:
       
     - name: Build Reciever
       run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testreceiver ReceiverTest.cpp Receiver.c
-   
-    - name: Run Receiver
-      run: ./testreceiver
       
     - name: Pipeline_Sender_Receiver_Executables
       run: mvn compile exec:java -Dexec.mainClass="Sender.Sender" | ./testreceiver
