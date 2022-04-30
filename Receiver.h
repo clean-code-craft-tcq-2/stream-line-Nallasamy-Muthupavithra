@@ -7,8 +7,8 @@
 
 typdef struct
 {
-  Current;
-  Temperature;
+  float Current;
+  float Temperature;
 }BatteryChargingParameters;
 
 void GetSensorDataFromConsole(float *Current, float *Temperature);
