@@ -5,12 +5,6 @@
 
 #define NO_OF_READINGS 50
 
-typedef struct
-{
-  float Current;
-  float Temperature;
-}BatteryChargingParameters;
-
 void GetSensorDataFromConsole(float *Current, float *Temperature);
 float GetMaxReadingValue(float *BMSParameter);
 float GetMinReadingValue(float *BMSParameter);
