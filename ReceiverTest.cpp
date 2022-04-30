@@ -29,7 +29,7 @@ TEST_CASE("Test to check Receiver statistics")
    }
    fclose(file);
  
-    float MinCurrrent =  GetMaxReadingValue(Current);
+    float MinCurrent =  GetMaxReadingValue(Current);
     float MaxCurrent = GetMinReadingValue(Current);
     float SMACurrent = GetSMAValue(Current);
     float MinTemperature=  GetMaxReadingValue(Temperature);
