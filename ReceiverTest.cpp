@@ -2,6 +2,8 @@
 #include "Receiver.h"
 #include "catch.hpp"
 
+GetSensorDataFromConsole(Current, Temperature);
+
 /*TEST_CASE("Tests to check if data is correctly read from file")
 {
   float Current[NO_OF_READINGS] = {0};
