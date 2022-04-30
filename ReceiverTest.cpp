@@ -5,7 +5,7 @@
 TEST_CASE("Test to check Receiver statistics") 
 { 
    BatteryChargingParameters ExpectedData[NO_OF_READINGS], Max, Min, SMA;
-   BMSReceiver(Current, Temperature);
+   BMSReceiver(BatteryChargingParameters.Current, BatteryChargingParameters.Temperature);
    float Current_loc, Temperature_loc;
     
    FILE * file= fopen("./BMS_DataFromConsole.txt","r");                                                                  
@@ -20,15 +20,15 @@ TEST_CASE("Test to check Receiver statistics")
         }
      }
        
-     REQUIRE( (Current[i] - ExpectedData[i].Current) <= 0.001);
-     REQUIRE( (Temperature[i] - ExpectedData[i].Temperature) <= 0.001);
+     REQUIRE( (BatteryChargingParameters.Current[i] - ExpectedData[i].Current) <= 0.001);
+     REQUIRE( (BatteryChargingParameters.Current[i] - ExpectedData[i].Temperature) <= 0.001);
    }
    fclose(file);
  
     Min.Current=  GetMaxReadingValue(Current);
     Max.Current = GetMinReadingValue(Current);
     SMA.Current = GetSMAValue(Current);
-	  Min.Temperature=  GetMaxReadingValue(Temperature);
+    Min.Temperature=  GetMaxReadingValue(Temperature);
     Max.Temperature = GetMinReadingValue(Temperature);
     SMA.Temperature = GetSMAValue(Temperature);
    
