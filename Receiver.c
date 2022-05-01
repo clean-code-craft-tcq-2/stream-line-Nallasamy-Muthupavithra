@@ -81,6 +81,6 @@ void PrintStatisticsOnConsole(float *BMSParameter, float MaxValue, float Minvalu
 void BMSReceiver(float *Current, float *Temperature)
 {
   GetSensorDataFromConsole(Current,Temperature);
-  PrintReceivedDataOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
-  PrintReceivedDataOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
+  PrintStatisticsOnConsole(Current,GetMaxReadingValue(Current),GetMinReadingValue(Current),GetSMAValue(Current));
+  PrintStatisticsOnConsole(Temperature,GetMaxReadingValue(Temperature),GetMinReadingValue(Temperature),GetSMAValue(Temperature)); 
 }
