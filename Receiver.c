@@ -65,7 +65,7 @@ float GetSMAValue(float *BMSParameter)
 }
 
 /* Print separated sensor readings, Max, Min and SMA on the console */ 
-void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
+void PrintStatisticsOnConsole(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
 {
   int readingIndex = 0;
   printf("Data received from sender\n");
