@@ -11,11 +11,11 @@ TEST_CASE("Test to check Receiver statistics")
    BMSReceiver(Current, Temperature);
     
    FILE * file= fopen("./BMS_DataFromConsole.txt","r");                                                                  
-   for(int i = 0 ; i < NO_OF_READINGS; i++)
+   for(int i=0; i<NO_OF_READINGS; i++)
    {
      if (file!=NULL) 
      {
-        for(int i=0;fscanf(file, "%f,%f\n", &Current_loc,&Temperature_loc)!=EOF ;i++)
+        for(int i=0; fscanf(file, "%f,%f\n", &Current_loc,&Temperature_loc)!=EOF; i++)
         {
             ExpectedCurrent[i] = Current_loc;
             ExpectedTemperature[i] = Temperature_loc;
