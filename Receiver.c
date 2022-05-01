@@ -1,5 +1,6 @@
 #include "Receiver.h"
 
+/* Read sensors data from console */
 void GetSensorDataFromConsole(float* Current, float* Temperature)
 {
   FILE* fp = fopen("./BMS_DataFromConsole.txt","r");
@@ -13,6 +14,7 @@ void GetSensorDataFromConsole(float* Current, float* Temperature)
   fclose(fp);
 }
 
+/* Calculate Max value from sensor readings */
 float GetMaxReadingValue(float *BMSParameter)
 {
   int readingIndex;
@@ -29,6 +31,7 @@ float GetMaxReadingValue(float *BMSParameter)
   return MaxReadingValue;
 }
 
+/* Calculate Min value from sensor readings */
 float GetMinReadingValue(float *BMSParameter)
 {
   int readingIndex;
@@ -45,6 +48,7 @@ float GetMinReadingValue(float *BMSParameter)
   return MinReadingValue;
 }
 
+/* Calculate Simple Moving Average of last 5 readings from sensor */
 float GetSMAValue(float *BMSParameter)
 {
   float SMAValue = 0.0;
@@ -60,6 +64,7 @@ float GetSMAValue(float *BMSParameter)
   return SMAValue;  
 }
 
+/* Print separated sensor readings, Max, Min and SMA on the console */ 
 void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minvalue, float SMA)
 {
   int readingIndex = 0;
@@ -72,6 +77,7 @@ void PrintReceivedDataOnConsole(float *BMSParameter, float MaxValue, float Minva
   printf("Max value: %f, Min value: %f, SMA: %f\n",MaxValue,Minvalue,SMA);  
 }
 
+/* BMSReceiver main function */
 void BMSReceiver(float *Current, float *Temperature)
 {
   GetSensorDataFromConsole(Current,Temperature);
